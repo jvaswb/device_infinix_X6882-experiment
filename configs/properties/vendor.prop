@@ -171,16 +171,17 @@ ro.vendor.mediatek.version.branch=alps-mp-s0.mp1
 ro.vendor.mediatek.version.release=alps-mp-s0.mp1.rc-V15.102_reallytek.s0mp1rc.k61v1.64.bsp_P59
 
 # Misc
+persist.vendor.factory.GB2312=no
 persist.vendor.kernel.version=5
 persist.vendor.uxcompaction_enable=true
-ro.vendor.rc=/vendor/etc/init/hw/
-persist.vendor.factory.GB2312=no
 ro.limit_cache.support=1
+ro.logd.kernel=false
 ro.vendor.efuse_writer_enable=1
 ro.vendor.mml.mtk_mml_support=0
 ro.vendor.mtk_gwsd_capability=1
 ro.vendor.mtk_mvpu_security_support=0
 ro.vendor.mtk_ovl_bringup=0
+ro.vendor.rc=/vendor/etc/init/hw/
 
 # Netflix
 ro.netflix.bsp_rev=MTK6789-35965-1
@@ -193,16 +194,14 @@ ro.vendor.mtk_nn_quant_preferred=1
 # Paytrigger
 ro.hardware.paytrigger=trustonic
 
-# Perf
-persist.vendor.iomanager.dirty=1
-persist.vendor.iomanager.switch=1
-persist.vendor.pnpmgr.enable=1
-persist.vendor.pnpmgr.gamemode.enable=1
-persist.vendor.pnpmgr.gamerecord.enable=1
+# Power
+persist.vendor.powerhal.thermal_ux_temp_max=55000
+persist.vendor.powerhal.thermal_ux_temp_min=43000
 ro.vendor.perf.scroll_opt=true
-ro.vendor.powerhal.gsi_watermark=500
+ro.vendor.powerhal.cloud=1
+ro.vendor.powerhal.encode=1
+ro.vendor.powerhal.thermal_ux_support=1
 ro.vendor.powerhal_fling_mode_support=1
-vendor.perf.framepacing.enable=1
 
 # Power
 vendor.powerhal.interaction.offset=0
@@ -332,6 +331,29 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 service.sf.prime_shader_cache=0
 
+# Surfaceflinger | cpupolicy
+vendor.debug.sf.cpupolicy=0
+vendor.debug.sf.cpupolicy.base_min_bl=310
+vendor.debug.sf.cpupolicy.hw_comp_suspend=1
+vendor.debug.sf.cpupolicy.hw_hfr_suspend=1
+vendor.debug.sf.cpupolicy.lowbound_uclamp_min=165
+vendor.debug.sf.cpupolicy.max_correct_offset=150
+vendor.debug.sf.cpupolicy.min_120=165
+vendor.debug.sf.cpupolicy.min_30_mml=165
+vendor.debug.sf.cpupolicy.min_60=130
+vendor.debug.sf.cpupolicy.min_60_mml=165
+vendor.debug.sf.cpupolicy.min_90=165
+vendor.debug.sf.cpupolicy.min_boost=165
+vendor.debug.sf.cpupolicy.power_down_120=300000
+vendor.debug.sf.cpupolicy.power_up_120=-300000
+vendor.debug.sf.cpupolicy.re_hfr=0
+vendor.debug.sf.cpupolicy.rt_bl_min=300
+vendor.debug.sf.cpupolicy.sf_cpu_thres=290
+vendor.debug.sf.cpupolicy.upbound_uclamp_max_ll=262
+vendor.debug.sf.cpupolicy.upbound_uclamp_min=350
+vendor.debug.sf.cpupolicy.upbound_uclamp_ret_sys=210
+vendor.debug.sf.cpupolicy.xgf_min=25
+
 # Storage
 external_storage.casefold.enabled=1
 external_storage.projid.enabled=1
@@ -349,7 +371,16 @@ ro.soc.model=MT6789V/CD
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_trustonic_tee_support=1
 
-# WiFi
+# Thermal
+ro.vendor.tran.hbm.thermal-patch=/devices/platform/thermal-ntc1
+ro.vendor.tran.hbm.thermal.temp.clr=42000
+ro.vendor.tran.hbm.thermal.temp.trig=44000
+
+# Wifi
+persist.vendor.mtk_wfc_support=1
+ro.vendor.mtk_tb_wifi_3g_mode=0
+ro.vendor.wfd.dummy.enable=0
+ro.vendor.wfd.iframesize.level=0
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
 ro.vendor.wlan.chrdev=wmt_chrdev_wifi
